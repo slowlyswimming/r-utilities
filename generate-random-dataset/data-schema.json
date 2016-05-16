@@ -1,0 +1,17 @@
+{
+	"rownum": 1000,
+	"colnum": 2,
+	"columns":[
+		{
+			"name": "age",
+			"type": "numeric",
+			"min": 0,
+			"max": 130
+		},
+		{
+			"name": "gender",
+			"type": "categorical",
+			"range": [0,1]
+		}
+	]
+}
