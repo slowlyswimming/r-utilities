@@ -1,6 +1,5 @@
 {
-	"rownum": 1000,
-	"colnum": 2,
+	"rownum": 10,
 	"columns":[
 		{
 			"name": "age",
@@ -12,6 +11,95 @@
 			"name": "gender",
 			"type": "categorical",
 			"range": [0,1]
+		},
+		{
+			"name": "cat1",
+			"type": "categorical",
+			"range": [0,1]
+		},
+		{
+			"name": "cat2",
+			"type": "categorical",
+			"range": [0,1]
+		},{
+			"name": "cat3",
+			"type": "categorical",
+			"range": [0,1]
+		},
+		{
+			"name": "cat4",
+			"type": "categorical",
+			"range": [0,1]
+		},{
+			"name": "num1",
+			"type": "double",
+			"min": 0.0,
+			"max": 200.0
+		},{
+			"name": "num2",
+			"type": "double",
+			"min": 0.0,
+			"max": 300.0
+		},{
+			"name": "num3",
+			"type": "numeric",
+			"min": 0,
+			"max": 50000
+		},{
+			"name": "num4",
+			"type": "double",
+			"min": -100.0,
+			"max": 100.0
+		},{
+			"name": "num5",
+			"type": "numeric",
+			"min": 0,
+			"max": 130
+		},
+		{
+			"name": "cat5",
+			"type": "categorical",
+			"range": [0,1]
+		},
+		{
+			"name": "cat6",
+			"type": "categorical",
+			"range": [0,1]
+		},
+		{
+			"name": "cat7",
+			"type": "categorical",
+			"range": [0,1]
+		},
+		{
+			"name": "cat8",
+			"type": "categorical",
+			"range": [0,1]
+		},
+		{
+			"name": "cat9",
+			"type": "categorical",
+			"range": [0,1]
+		},{
+			"name": "num6",
+			"type": "double",
+			"min": 0.0,
+			"max": 200.0
+		},{
+			"name": "num7",
+			"type": "double",
+			"min": 0.0,
+			"max": 300.0
+		},{
+			"name": "num8",
+			"type": "numeric",
+			"min": 0,
+			"max": 50000
+		},{
+			"name": "num9",
+			"type": "double",
+			"min": -100.0,
+			"max": 100.0
 		}
 	]
 }

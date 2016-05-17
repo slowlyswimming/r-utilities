@@ -4,11 +4,11 @@
 
 library(jsonlite)
 
-url = '/Users/work/project/workspace-r-2016/r-utilities/data-schema.json'
+url = '/Users/work/project/workspace-r-2016/r-utilities/generate-random-dataset/data-schema.json'
 schema <- fromJSON(txt=url)
 
 # Generate random numbers of NULL values for each column
-nullnums = sample(0:schema$rownum,schema$colnum)
+nullnums = sample(0:(schema$rownum-1),length(schema$columns[1]$name),replace = TRUE)
 
 for(i in 1:length(nullnums)){
   if(schema$columns[2]$type[i] == 'numeric'){
@@ -16,6 +16,19 @@ for(i in 1:length(nullnums)){
     dmin = schema$columns[3]$min[i]
     dmax = schema$columns[4]$max[i]
     v = sample(dmin:dmax,schema$rownum,replace = TRUE)
+    
+    # Generate NULL data for the selected column
+    nullindexes = sample(1:schema$rownum, nullnums[i])
+    for(j in 1:length(nullindexes)){
+      nullindex = nullindexes[j]
+      nullindex
+      v[nullindex] = NA
+    }
+  }else if(schema$columns[2]$type[i] == 'double'){
+    # Generate data for selected column without NULL data
+    dmin = schema$columns[3]$min[i]
+    dmax = schema$columns[4]$max[i]
+    v = runif(schema$rownum,dmin,dmax)
     
     # Generate NULL data for the selected column
     nullindexes = sample(1:schema$rownum, nullnums[i])
@@ -47,5 +60,7 @@ for(i in 1:length(nullnums)){
   }
 }
 
+colnames(sdata) = schema$columns[1]$name
+
 # Save data frame to local file
-write.csv(sdata, '/Users/work/project/workspace-r-2016/r-utilities//data.csv', row.names=FALSE, na="")
+write.csv(sdata, '/Users/work/project/workspace-rwe-2016/AnimationSandBox/WebContent/charts/scatter-chart/data.csv', row.names=FALSE, na="")
